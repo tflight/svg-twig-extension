@@ -23,9 +23,9 @@ class SvgExtension extends \Twig_Extension
         $parentFunctions = parent::getFunctions();
 
         array_push(
-        $parentFunctions,
-        new \Twig_SimpleFunction('svg', array($this, 'getSvg'), array("is_safe" => array("html")))
-    );
+            $parentFunctions,
+            new \Twig_SimpleFunction('svg', array($this, 'getSvg'), array("is_safe" => array("html")))
+        );
 
         return $parentFunctions;
     }

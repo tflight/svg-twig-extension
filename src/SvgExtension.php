@@ -2,11 +2,14 @@
 
 namespace manuelodelain\Twig\Extension;
 
+use Twig\TwigFunction;
+use Twig\Extension\AbstractExtension;
+
 /**
  *
  */
 
-class SvgExtension extends \Twig_Extension
+class SvgExtension extends AbstractExtension
 {
     public function __construct($basePath = '')
     {
@@ -24,7 +27,7 @@ class SvgExtension extends \Twig_Extension
 
         array_push(
             $parentFunctions,
-            new \Twig_SimpleFunction('svg', array($this, 'getSvg'), array("is_safe" => array("html")))
+            new TwigFunction('svg', array($this, 'getSvg'), array("is_safe" => array("html")))
         );
 
         return $parentFunctions;
